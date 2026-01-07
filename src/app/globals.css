@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: hsl(345, 90%, 48%);
+    --color-primary-foreground: hsl(0, 0%, 98%);
+    --color-secondary: hsl(15, 90%, 60%);
+    --color-secondary-foreground: hsl(0, 0%, 98%);
+    --color-accent: hsl(345, 80%, 55%);
+    --color-accent-foreground: hsl(0, 0%, 9%);
+    --color-muted: hsl(0, 0%, 96.1%);
+    --color-muted-foreground: hsl(0, 0%, 45.1%);
+    --color-destructive: hsl(0, 84.2%, 60.2%);
+    --color-destructive-foreground: hsl(0, 0%, 98%);
+    --color-background: hsl(0, 0%, 100%);
+    --color-foreground: hsl(0, 0%, 3.9%);
+    --color-card: hsl(0, 0%, 100%);
+    --color-card-foreground: hsl(0, 0%, 3.9%);
+    --color-border: hsl(0, 0%, 89.8%);
+    --color-input: hsl(0, 0%, 89.8%);
+    --color-ring: hsl(345, 90%, 48%);
+    --radius: 0.75rem;
+
+    /* Custom gradient colors */
+    --gradient-start: #FF6B4A;
+    --gradient-mid: #E91E63;
+    --gradient-end: #D81B60;
+
+    /* Font families */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 345 90% 48%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 15 90% 60%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 345 80% 55%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 345 90% 48%;
+    --radius: 0.75rem;
+}
+
+.dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 345 85% 55%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 15 85% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 345 75% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 345 85% 52%;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: hsl(345 90% 48% / 0.2);
+    color: hsl(345 90% 35%);
+}
+
+/* Utility classes */
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Gradient text utility */
+.gradient-text {
+    background: linear-gradient(to right, #FF6B4A, #E91E63, #D81B60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Gradient background utility */
+.gradient-bg {
+    background: linear-gradient(to right, #FF6B4A, #E91E63, #D81B60);
+}
+
+/* Glass morphism */
+.glass {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Math font for formulas */
+.font-math {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+            transparent 0%,
+            hsl(345 90% 48% / 0.1) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Float animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px hsl(345 90% 48% / 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px hsl(345 90% 48% / 0.5);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Custom animations for math symbols */
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+}
+
+/* Smooth reveal animation */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-reveal {
+    animation: reveal 0.6s ease-out forwards;
+}
+
+/* Focus visible styling */
+:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+}
+
+/* Button press effect */
+button:active {
+    transform: scale(0.98);
+}
