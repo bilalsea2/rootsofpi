@@ -32,7 +32,7 @@ const solution = [
 ];
 
 const socialLinks = [
-    { name: "Telegram", href: "https://t.me/rootsofpi", icon: "📱" },
+    { name: "Telegram", href: "https://t.me/pildizlari", icon: "📱" },
     { name: "Instagram", href: "https://instagram.com/rootsofpi", icon: "📸" },
     { name: "Email", href: "mailto:contact@rootsofpi.org", icon: "✉️" },
 ];

@@ -29,13 +29,13 @@ const contactInfo = [
     {
         icon: Phone,
         label: "Telegram",
-        value: "@rootsofpi",
-        href: "https://t.me/rootsofpi",
+        value: "@pildizlari",
+        href: "https://t.me/pildizlari",
     },
 ];
 
 const socialLinks = [
-    { icon: MessageSquare, label: "Telegram", href: "https://t.me/rootsofpi", color: "from-blue-400 to-blue-600" },
+    { icon: MessageSquare, label: "Telegram", href: "https://t.me/pildizlari", color: "from-blue-400 to-blue-600" },
     { icon: Instagram, label: "Instagram", href: "https://instagram.com/rootsofpi", color: "from-pink-500 to-purple-600" },
     { icon: Mail, label: "Email", href: "mailto:contact@rootsofpi.org", color: "from-orange-400 to-rose-500" },
 ];
@@ -159,7 +159,7 @@ export default function Contact() {
                                             Join our Telegram community!
                                         </p>
                                         <a
-                                            href="https://t.me/rootsofpi"
+                                            href="https://t.me/pildizlari"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary rounded-full font-semibold text-sm hover:bg-white/90 transition-colors"
