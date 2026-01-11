@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useMemo } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useAnimationFrame } from "framer-motion";
+import { motion } from "framer-motion";
 import { galleryImages } from "@/data/galleryImages";
 import { cn } from "@/lib/utils";
 
@@ -13,9 +13,7 @@ const shuffle = (array: string[]) => {
 
 // Split images into columns
 const useGalleryColumns = (images: string[], columnCount: number) => {
-    const [columns, setColumns] = useState<string[][]>([]);
-
-    useEffect(() => {
+    return useMemo(() => {
         const shuffled = shuffle(images);
         const cols: string[][] = Array.from({ length: columnCount }, () => []);
 
@@ -24,10 +22,8 @@ const useGalleryColumns = (images: string[], columnCount: number) => {
         });
 
         // Duplicate for infinite scroll
-        setColumns(cols.map(col => [...col, ...col, ...col]));
+        return cols.map(col => [...col, ...col, ...col]);
     }, [images, columnCount]);
-
-    return columns;
 };
 
 const GalleryColumn = ({
@@ -41,13 +37,6 @@ const GalleryColumn = ({
     speed?: number,
     className?: string
 }) => {
-    const columnRef = useRef<HTMLDivElement>(null);
-    const y = useMotionValue(0);
-
-    // We need to move the column. 
-    // If direction is down, we move from negative top towards 0 (or simply animate y).
-    // Let's use a simpler approach: wrapping animate
-
     return (
         <div className={cn("relative h-full overflow-hidden", className)}>
             <motion.div

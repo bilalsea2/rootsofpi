@@ -138,7 +138,7 @@ export default function Hero() {
                         { value: "6", label: "Tournaments", suffix: "" },
                         { value: "150", label: "Students", suffix: "+" },
                         { value: "∞", label: "Possibilities", suffix: "" },
-                    ].map((stat, i) => (
+                    ].map((stat) => (
                         <motion.div
                             key={stat.label}
                             whileHover={{ y: -5 }}

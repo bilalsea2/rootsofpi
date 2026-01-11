@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import { Sparkles, RefreshCw, Check, X, Sigma, Pi } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -45,21 +45,17 @@ const quickLinks = [
 ];
 
 function SudokuGame() {
-    const [grid, setGrid] = useState<number[][]>([]);
+    const [grid, setGrid] = useState<number[][]>(() => initialPuzzle.map(row => [...row]));
     const [selectedCell, setSelectedCell] = useState<{ row: number; col: number } | null>(null);
     const [isComplete, setIsComplete] = useState(false);
     const [errors, setErrors] = useState<Set<string>>(new Set());
 
-    useEffect(() => {
-        resetPuzzle();
-    }, []);
-
-    const resetPuzzle = () => {
+    const resetPuzzle = useCallback(() => {
         setGrid(initialPuzzle.map(row => [...row]));
         setSelectedCell(null);
         setIsComplete(false);
         setErrors(new Set());
-    };
+    }, []);
 
     const checkErrors = useCallback((newGrid: number[][]) => {
         const newErrors = new Set<string>();
