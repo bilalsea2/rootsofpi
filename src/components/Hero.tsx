@@ -77,13 +77,9 @@ export default function Hero() {
                         whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                         transition={{ duration: 0.5 }}
                         className="relative w-36 h-36 md:w-44 md:h-44"
-                        style={{
-                            maskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 60%, transparent 100%)',
-                            WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 60%, transparent 100%)'
-                        }}
                     >
                         <Image
-                            src="/assets/logo.png"
+                            src="/assets/logo_improved.png"
                             alt="The Roots of PI Logo"
                             fill
                             className="object-contain drop-shadow-2xl"

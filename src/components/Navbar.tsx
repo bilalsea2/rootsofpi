@@ -58,7 +58,7 @@ export default function Navbar() {
                             className="relative w-10 h-10"
                         >
                             <Image
-                                src="/assets/logo.png"
+                                src="/assets/logo_improved.png"
                                 alt="The Roots of PI"
                                 fill
                                 className="object-contain"
