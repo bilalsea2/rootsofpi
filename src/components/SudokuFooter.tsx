@@ -239,7 +239,7 @@ export default function SudokuFooter() {
                         <div className="flex items-center gap-3">
                             <div className="relative w-12 h-12 bg-white rounded-xl p-1">
                                 <Image
-                                    src="/assets/logo_improved.png"
+                                    src="/assets/logo_improved.svg"
                                     alt="The Roots of PI"
                                     fill
                                     className="object-contain"

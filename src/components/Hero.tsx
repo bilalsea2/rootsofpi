@@ -79,7 +79,7 @@ export default function Hero() {
                         className="relative w-36 h-36 md:w-44 md:h-44"
                     >
                         <Image
-                            src="/assets/logo_improved.png"
+                            src="/assets/logo_improved.svg"
                             alt="The Roots of PI Logo"
                             fill
                             className="object-contain drop-shadow-2xl"
